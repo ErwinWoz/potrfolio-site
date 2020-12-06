@@ -3,6 +3,7 @@ import home1 from '../img/home1.png';
 import { AboutStyle, DescriptionStyle, ImageStyle, HideStyle } from '../styles';
 //Framer Motion
 import { motion } from 'framer-motion';
+import { titleAnim, fade, photoAnim } from '../animation';
 
 const AboutSection = () => {
     return ( 
@@ -10,20 +11,20 @@ const AboutSection = () => {
             <DescriptionStyle>
                 <div className="title">
                     <HideStyle>
-                        <h2>We work to make</h2>
+                        <motion.h2 variants={titleAnim} >We work to make</motion.h2>
                     </HideStyle>
                     <HideStyle>
-                        <h2>your <span>dream</span> come</h2>
+                        <motion.h2 variants={titleAnim}>your <span>dream</span> come</motion.h2>
                     </HideStyle>
                     <HideStyle>
-                        <h2>true</h2>
+                        <motion.h2 variants={titleAnim}>true</motion.h2>
                     </HideStyle>
                 </div>
-                <p>Contact us for any photography and video editig. We have professionals with amazing skills.</p>
-                <button>Contact Us</button>
+                <motion.p variants={fade} >Contact us for any photography and video editig. We have professionals with amazing skills.</motion.p>
+                <motion.button variants={fade} >Contact Us</motion.button>
             </DescriptionStyle>
             <ImageStyle>
-                <img src={home1} alt="guy with camera" />
+                <motion.img variants={photoAnim} src={home1} alt="guy with camera" />
             </ImageStyle>
         </AboutStyle>
     );
