@@ -4,6 +4,7 @@ import { AboutStyle, DescriptionStyle, ImageStyle, HideStyle } from '../styles';
 //Framer Motion
 import { motion } from 'framer-motion';
 import { titleAnim, fade, photoAnim } from '../animation';
+import Wave from './Wave';
 
 const AboutSection = () => {
     return ( 
@@ -26,6 +27,7 @@ const AboutSection = () => {
             <ImageStyle>
                 <motion.img variants={photoAnim} src={home1} alt="guy with camera" />
             </ImageStyle>
+            <Wave />
         </AboutStyle>
     );
 };
