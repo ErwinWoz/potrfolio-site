@@ -1,22 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Nav = () => {
     return ( 
         <NavStyle>
             <h1>
-                <Link to='/' id='logo'>Capture</Link>
+                <NavLink to='/' id='logo'>Capture</NavLink>
             </h1>
             <ul>
                 <li>
-                    <Link to='/'>1. About Us</Link>
+                    <NavLink
+                        exact 
+                        to='/'
+                        activeClassName='selectedLink'
+                        >1. About Us
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to='/work'>2. Our Work</Link>
+                    <NavLink
+                        exact 
+                        to='/work'
+                        activeClassName='selectedLink'
+                        >2. Our Work
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to='/contact'>3. Contact Us</Link>
+                    <NavLink
+                        exact
+                        to='/contact'
+                        activeClassName='selectedLink'
+                        >3. Contact Us
+                    </NavLink>
                 </li>
             </ul>
         </NavStyle>
@@ -50,6 +66,9 @@ const NavStyle = styled.nav`
     li {
         padding-left: 10rem;
         position: relative;
+    }
+    .selectedLink {
+        border-bottom: 2px double #23d997;
     }
     @media (max-width: 1300px) {
         flex-direction: column;
